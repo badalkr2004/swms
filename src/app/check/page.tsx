@@ -80,7 +80,7 @@ const WasteReportInterface = () => {
 
   const handleSubmitReport = async () => {
     try {
-      // In a real app, you'd send this to your backend
+     
       const body ={
         location_latitude: String(location?.lat),
         location_longitude: String(location?.lng),
@@ -95,7 +95,7 @@ const WasteReportInterface = () => {
     })
     const response = await resp.json()
 console.log(response)
-      // Simulating API call
+      //  API call
      
       
       setReportStatus('submitted');
@@ -115,7 +115,7 @@ console.log(response)
           </CardTitle>
         </CardHeader>
         <CardContent>
-          {/* Step 1: Location Selection */}
+     
           <div className={`mb-6 ${step !== 1 && 'opacity-50'}`}>
             <h3 className="text-lg font-semibold mb-3">Step 1: Share Location</h3>
             <div className="space-y-4">
@@ -138,7 +138,7 @@ console.log(response)
             </div>
           </div>
 
-          {/* Step 2: Image Upload */}
+        
           <div className={`mb-6 ${step !== 2 && 'opacity-50'}`}>
             <h3 className="text-lg font-semibold mb-3">Step 2: Upload Photo</h3>
             <div className="space-y-4">
@@ -174,7 +174,7 @@ console.log(response)
             </div>
           </div>
 
-          {/* Step 3: Description */}
+        
           <div className={`mb-6 ${step !== 3 && 'opacity-50'}`}>
             <h3 className="text-lg font-semibold mb-3">Step 3: Add Description</h3>
             <textarea
@@ -195,7 +195,7 @@ console.log(response)
             )}
           </div>
 
-          {/* Step 4: Confirmation */}
+      
           {step === 4 && (
             <Alert className="bg-green-50">
               <Check className="h-4 w-4 text-green-500" />
@@ -209,7 +209,7 @@ console.log(response)
         </CardContent>
       </Card>
 
-      {/* Progress Indicator */}
+      
       <div className="flex justify-between px-2">
         {[1, 2, 3, 4].map((stepNumber) => (
           <div 
