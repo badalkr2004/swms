@@ -82,18 +82,19 @@ const WasteReportInterface = () => {
     try {
       // In a real app, you'd send this to your backend
       const body ={
-        location_latitude: location?.lat,
-        location_longitude: location?.lng,
+        location_latitude: String(location?.lat),
+        location_longitude: String(location?.lng),
         image:imageUrl,
         address:description
       
       }
 
-    await fetch("/api/addactivegarbagelocation",{
+    const resp = await fetch("/api/addactivegarbagelocation",{
         method:"POST",
         body:JSON.stringify(body)
     })
-
+    const response = await resp.json()
+console.log(response)
       // Simulating API call
      
       
