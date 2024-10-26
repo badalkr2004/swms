@@ -6,7 +6,7 @@ const Garbage = new mongoose.Schema({
   location_longitude: { type: String, required: true },
   garbage_type: { type: String, required: true },
   status: { type: String, required: true },
-  description: { type: String, required: true },
+  description: { type: String, required: false },
   image: { type: String, required: true },
   address: { type: String, required: true },
   date_created: { type: Date, default: Date.now },
