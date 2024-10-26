@@ -4,19 +4,19 @@ import nearby_bin_location from "@/public/nearby-bin-location.png";
 // import add_garbage from "@/public/add-garbage.png";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-export default function Home() {
+export default function Admin() {
   return (
     <div className="w-full h-full lg:w-1/2 m-auto min-h-[500px] ">
       <Image src={main_page_garbage} alt="main image" />
       <h1 className="font-bold text-3xl text-center w-full md:w-4/5 m-auto md:text-3xl text-green-900">
-        Efficient Waste Solutions for a Cleaner Tomorrow
+        Trash Track - Admin Panel
       </h1>
       <p className="text-center">
-        Trash Track is your ultimate solution for efficient and eco-friendly
-        waste management. Our smart technology helps you sort, track, and manage
-        waste effortlessly, promoting a cleaner and greener environment. Join us
-        in making sustainable living easy and accessible for everyone.
+        features:
+        <br />
+        Add new dustbin locations 
+        <br />
+        Get reported garbage locations
       </p>
       <br />
       <br />
@@ -79,16 +79,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <br />
-      <div className="flex gap-4 align-middle items-center p-3  h-fit outline rounded outline-green-600 justify-between">
-        <h1 >Are you a Admin? Login to continue:</h1>
-        
-        <Link href="/admin">
-          <Button className="bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white text-sm rounded-lg px-10 py-3">
-            Admin
-          </Button>
-        </Link>
       </div>
       
     </div>
