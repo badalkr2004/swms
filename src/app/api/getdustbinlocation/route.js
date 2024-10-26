@@ -1,12 +1,12 @@
 // pages/api/users.js
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from '../../../Database/connection/connect';
-import GarbageModel from '../../../Database/schema/garbageSchema';
+import dustbinSchema from '../../../Database/schema/dustbinSchema';
 
 export async function GET(req, res) {
     await connectToDatabase();
     try {
-        const data = await GarbageModel.find({status: 'success'})
+        const data = await dustbinSchema.find({})
         return NextResponse.json({ success: true, data: data } , {status: 200});
     } catch (error) {
         console.log(error);
