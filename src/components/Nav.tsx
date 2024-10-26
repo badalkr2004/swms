@@ -55,7 +55,7 @@ export function Nav() {
     <nav className="w-full flex gap-4 justify-between items-center px-6 py-4  dark:to-gray-800">
       <Link href={"./"} className="flex">
         {/* <AppLogo /> */}
-        <div className="font-bold text-2xl ">memo</div>
+        <div className="font-bold text-2xl ">Trash Track</div>
       </Link>
 
       
