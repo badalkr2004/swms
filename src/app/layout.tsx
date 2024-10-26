@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Poppins } from "@next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Nav } from "@/components/Nav";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "700", "500", "800", "600", "900"],
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +25,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${poppins.className} m-0 p-0`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="w-full h-screen fixed -z-10 bg-gradient-to-r from-purple-300 via-blue-200 to-indigo-200 animated-background opacity-40 blur-2xl dark:opacity-0"></div>
+          <Nav />
+          <main className=" p-6">{children}</main>
+          
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
