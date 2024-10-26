@@ -33,7 +33,7 @@ export default function Admin() {
           <div className="px-5 pb-5">
             <a href="#">
               <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
-                Add Garbage Locations
+                Add New Dustbin
               </h5>
             </a>
             <div className="flex items-center mt-2.5 mb-5">
@@ -62,7 +62,7 @@ export default function Admin() {
           <div className="px-5 pb-5">
             <a href="#">
               <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
-                Nearby Bin Locations
+                Garbage Reports
               </h5>
             </a>
             <div className="flex items-center mt-2.5 mb-5">
