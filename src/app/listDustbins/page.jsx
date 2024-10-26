@@ -41,7 +41,7 @@ const LocationTable = () => {
       const response = await fetch("/api/getdustbinlocation");
       if (!response.ok) throw new Error("Failed to fetch data");
       const result = await response.json();
-      setLocations(result.data); // Access the data array from the response
+      setLocations(result.data); 
       setError(null);
     } catch (err) {
       setError("Error fetching locations: " + err.message);

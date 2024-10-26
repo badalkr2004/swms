@@ -7,12 +7,13 @@ import Link from "next/link";
 export default function Admin() {
   return (
     <div className="w-full h-full lg:w-1/2 m-auto min-h-[500px] ">
-      <Image src={main_page_garbage} alt="main image" />
+      <Image src={main_page_garbage} alt="main image class" />
       <h1 className="font-bold text-3xl text-center w-full md:w-4/5 m-auto md:text-3xl text-green-900">
         Trash Track - Admin Panel
       </h1>
       <p className="text-center">
-        features:
+        <b>Features:</b>
+        
         <br />
         Add new dustbin locations 
         <br />

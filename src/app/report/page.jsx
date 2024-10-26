@@ -52,11 +52,11 @@ const LocationForm = () => {
 
       const { latitude, longitude } = position.coords;
 
-      // Set coordinates
+   
       form.setValue("location_latitude", latitude.toString());
       form.setValue("location_longitude", longitude.toString());
 
-      // Get address from coordinates
+    
       const address = await getAddressFromCoordinates(latitude, longitude);
       if (address) {
         form.setValue("address", address);
