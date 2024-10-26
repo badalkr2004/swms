@@ -61,6 +61,7 @@ export function Nav() {
       
       <div className="flex items-center gap-3">
         <Button className="bg-black text-white">Get Started →</Button>
+        
 
       </div>
     </nav>

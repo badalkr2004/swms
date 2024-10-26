@@ -33,7 +33,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="w-full h-screen fixed -z-10 bg-gradient-to-r from-purple-300 via-blue-200 to-indigo-200 animated-background opacity-40 blur-2xl dark:opacity-0"></div>
+          {/* <div className="w-full h-screen fixed -z-10 bg-gradient-to-r from-purple-300 via-blue-200 to-indigo-200 animated-background opacity-40 blur-2xl dark:opacity-0"></div> */}
           <Nav />
           <main className=" p-6">{children}</main>
           <Footer />
