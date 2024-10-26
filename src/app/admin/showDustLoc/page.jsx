@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const GarbageDataTable = () => {
   const [data, setData] = useState([]);
@@ -38,6 +39,13 @@ const GarbageDataTable = () => {
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString();
+  };
+
+  const viewOnMap = (latitude, longitude) => {
+    window.open(
+      `https://www.google.com/maps?q=${latitude},${longitude}`,
+      "_blank"
+    );
   };
 
   if (loading) {
@@ -91,7 +99,16 @@ const GarbageDataTable = () => {
                       {item._id.slice(-6)}...
                     </TableCell>
                     <TableCell>
-                      {item.location_latitude}, {item.location_longitude}
+                      <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() =>
+                            viewOnMap(
+                              item.location_latitude,
+                              item.location_longitude
+                            )
+                          }
+                      >View on map</Button>
                     </TableCell>
                     <TableCell>{item.garbage_type}</TableCell>
                     <TableCell>{item.status}</TableCell>
