@@ -3,13 +3,11 @@ import { NextResponse } from 'next/server';
 import { connectToDatabase } from '../../../Database/connection/connect';
 import GarbageModel from '../../../Database/schema/garbageSchema';
 
-export async function POST(req, res) {
+export async function GET(req, res) {
     await connectToDatabase();
     try {
-        const data = await req.json();
-        const newGarbage = new GarbageModel(data);
-        await newGarbage.save();
-        return NextResponse.json({ success: true, data: newGarbage } , {status: 201});
+        const data = await GarbageModel.find({status: 'pending'})
+        return NextResponse.json({ success: true, data: data } , {status: 200});
     } catch (error) {
         console.log(error);
         return NextResponse.json({ success: false, error: 'Failed to add' } , {status : 400});

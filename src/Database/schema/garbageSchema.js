@@ -11,4 +11,4 @@ const Garbage = new mongoose.Schema({
   date_created: { type: Date, default: Date.now },
 });
 
-export default mongoose.models.Garbage || mongoose.model('GarbageDetail' , Garbage);
+export default mongoose.models.GarbageDetail || mongoose.model('GarbageDetail' , Garbage);
