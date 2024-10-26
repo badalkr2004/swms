@@ -81,15 +81,21 @@ const WasteReportInterface = () => {
   const handleSubmitReport = async () => {
     try {
       // In a real app, you'd send this to your backend
-      const reportData = {
-        location,
-        imageUrl,
-        description,
-        timestamp: new Date().toISOString(),
-      };
+      const body ={
+        location_latitude: location?.lat,
+        location_longitude: location?.lng,
+        image:imageUrl,
+        address:description
+      
+      }
+
+    await fetch("/api/addactivegarbagelocation",{
+        method:"POST",
+        body:JSON.stringify(body)
+    })
 
       // Simulating API call
-      console.log('Submitting report:', reportData);
+     
       
       setReportStatus('submitted');
       setStep(4);
