@@ -21,8 +21,7 @@ const WasteReportInterface = () => {
   const [uploadError, setUploadError] = useState<string | null>(null);
 
   // Cloudinary configuration
-  const CLOUDINARY_UPLOAD_PRESET = 'your_upload_preset';
-  const CLOUDINARY_CLOUD_NAME = 'your_cloud_name';
+
 
   const handleLocationDetect = () => {
     if (navigator.geolocation) {
@@ -41,7 +40,7 @@ const WasteReportInterface = () => {
     }
   };
 
-  const handleImageUpload = async (e) => {
+  const handleImageUpload = async (e:any) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -52,11 +51,11 @@ const WasteReportInterface = () => {
       // Create form data for upload
       const formData = new FormData();
       formData.append('file', file);
-      formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+      formData.append('upload_preset', "upload");
 
       // Upload to Cloudinary
       const response = await fetch(
-        `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+        `https://api.cloudinary.com/v1_1/dc3l5tef4/image/upload`,
         {
           method: 'POST',
           body: formData,
@@ -68,6 +67,7 @@ const WasteReportInterface = () => {
       }
 
       const data = await response.json();
+      console.log(data.secure_url)
       setImageUrl(data.secure_url);
       setStep(3);
     } catch (error) {
