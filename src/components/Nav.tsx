@@ -13,7 +13,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-import { AppLogo } from "./AppLogo";
+// import { AppLogo } from "./AppLogo";
 import Link from "next/link";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -54,7 +54,7 @@ export function Nav() {
     // w-full flex gap-4 justify-between items-center px-6 py-4  fixed bg-gradient-to-b from-transparent  to-white backdrop-blur-md shadow-md dark:to-gray-800
     <nav className="w-full flex gap-4 justify-between items-center px-6 py-4   dark:to-gray-800">
       <Link href={"./"} className="flex">
-        <AppLogo />
+        {/* <AppLogo /> */}
         <div className="font-bold text-2xl ">memo</div>
       </Link>
 
