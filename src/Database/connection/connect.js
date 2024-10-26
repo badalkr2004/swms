@@ -1,7 +1,7 @@
 // lib/mongoose.js
 import mongoose from 'mongoose';
 
-const MONGODB_URI = "mongodb+srv://amitbarahpuriya:<db_password>@cluster0.vjjeulm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const MONGODB_URI = "mongodb+srv://amitbarahpuriya:AmitKumar123@cluster0.vjjeulm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 if (!MONGODB_URI) {
   throw new Error('Please add the MONGODB_URI to your .env.local');
